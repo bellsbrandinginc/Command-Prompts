@@ -8,7 +8,8 @@ Imports System.Text
 Class MainWindow
 
     Dim outputFile As String = "\\gsodata2\pss Data\Special Projects\Development\Output\output.txt"
-    Dim _server = "\\bndata2\cmdata01"
+    Dim _server = "bndata2"
+    Dim _shares = "cmdata01"
 
 
 
@@ -19,7 +20,7 @@ Class MainWindow
 
         'proc.StartInfo.WorkingDirectory = "H:\"
         proc.StartInfo.FileName = "cmd.exe"
-        proc.StartInfo.Arguments = "/C " + "dir /b " + _server
+        proc.StartInfo.Arguments = "/C " + "dir /b \\" + _server + "\" + _shares
         proc.StartInfo.CreateNoWindow = False
         proc.StartInfo.UseShellExecute = False
         proc.StartInfo.RedirectStandardOutput = True
